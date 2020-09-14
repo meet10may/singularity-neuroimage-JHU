@@ -2,8 +2,7 @@ Bootstrap:docker
 From:ubuntu:16.04
 
 %labels
-MAINTAINER Vanessasaur
-SPECIES Dinosaur
+MAINTAINER Tanmay Nath  
 
 %environment
 RAWR_BASE=/code
@@ -16,7 +15,7 @@ exec /bin/bash /code/rawr.sh "$@"
 %post
 echo "This section happens once after bootstrap to build the image."
 mkdir -p /code
-apr-get update
+apt-get update
 apt-get install vim
 echo "RoooAAAAR" >> /code/rawr.sh
 chmod u+x /code/rawr.sh
